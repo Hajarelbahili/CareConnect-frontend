@@ -1,0 +1,249 @@
+.generic-banner {
+  width: 100%;
+  min-height: 350px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: end;
+  gap: 40px;
+
+  padding: 28px 42px 0 42px;
+
+  background: var(--color-background);
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+/* =========================
+   VISUAL
+========================= */
+
+.generic-banner__visual {
+  position: relative;
+  height: 245px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.generic-banner__image {
+  position: relative;
+  z-index: 2;
+
+  width: 65%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+/* =========================
+   FLOATING CARDS
+========================= */
+
+.generic-banner__card {
+  position: absolute;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 125px;
+  padding: 11px 14px;
+
+  background: #ffffff;
+  border-radius: 9px;
+
+  box-shadow: 0 5px 18px rgba(93, 67, 96, 0.08);
+
+  font-size: 13px;
+  font-weight: 600;
+  color: #161616;
+}
+
+.generic-banner__card-icon {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-primary);
+}
+
+.generic-banner__card--left {
+  left: 4%;
+  top: 40%;
+}
+
+.generic-banner__card--top-right {
+  right: 3%;
+  top: 5%;
+}
+
+.generic-banner__card--bottom-right {
+  right: 7%;
+  bottom: 2%;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.generic-banner__content {
+  max-width: 470px;
+  justify-self: center;
+
+  /* Centrage vertical */
+  align-self: center;
+}
+
+.generic-banner__badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 13px;
+
+  border: 1px solid var(--color-primary-light);
+  border-radius: 20px;
+
+  color: var(--color-primary);
+  background: #fcfafd;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  margin-bottom: 15px;
+}
+
+.generic-banner__title {
+  margin: 0;
+
+  color: #111111;
+
+  font-size: clamp(32px, 3vw, 45px);
+  line-height: 1.02;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+}
+
+.generic-banner__title span {
+  color: var(--color-primary);
+}
+
+.generic-banner__description {
+  max-width: 420px;
+
+  margin: 14px 0 0;
+
+  color: #707070;
+
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .generic-banner {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    padding: 25px;
+  }
+
+  .generic-banner__image {
+    width: 72%;
+  }
+
+  .generic-banner__card {
+    min-width: 110px;
+    padding: 9px 11px;
+
+    font-size: 11px;
+  }
+
+  .generic-banner__card-icon {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .generic-banner {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    min-height: auto;
+
+    padding: 25px 18px 28px;
+    padding-top: 100px;
+    text-align: left;
+  }
+
+  .generic-banner__visual {
+    width: 100%;
+    height: 230px;
+
+    order: 1;
+  }
+
+  .generic-banner__image {
+    width: 65%;
+  }
+
+  .generic-banner__content {
+    width: 100%;
+    order: 2;
+  }
+
+  .generic-banner__title {
+    font-size: 31px;
+  }
+
+  .generic-banner__description {
+    max-width: 100%;
+    font-size: 11px;
+  }
+
+  .generic-banner__card {
+    min-width: 105px;
+
+    padding: 8px 10px;
+
+    gap: 7px;
+
+    font-size: 10px;
+  }
+
+  .generic-banner__card-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .generic-banner__card--left {
+    left: 0;
+    top: 38%;
+  }
+
+  .generic-banner__card--top-right {
+    right: 0;
+    top: 5%;
+  }
+
+  .generic-banner__card--bottom-right {
+    right: 1%;
+    bottom: 2%;
+  }
+}

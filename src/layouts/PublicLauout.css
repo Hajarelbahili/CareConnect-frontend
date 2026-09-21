@@ -1,0 +1,14 @@
+.public-layout {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.public-content {
+  position: relative;
+}
+
+.public-main {
+  width: 100%;
+}

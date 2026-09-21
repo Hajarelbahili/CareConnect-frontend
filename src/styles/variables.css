@@ -1,0 +1,51 @@
+:root {
+  /* =========================
+     CARECONNECT COLORS
+  ========================= */
+
+  --color-primary: #3a76c8;
+  --color-primary-light: #a1bee5;
+  --color-accent: #6fcfd6;
+  --color-background: #e2e8f6;
+
+  /* =========================
+     NEUTRAL COLORS
+  ========================= */
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-text: #1e293b;
+  --color-text-light: #64748b;
+
+  --color-border: #dbe3f0;
+
+  /* =========================
+     STATES
+  ========================= */
+
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-danger-light: #fef2f2;
+
+  /* Layout */
+  --container-width: 1200px;
+  --container-padding: 24px;
+}
+body {
+  margin: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}

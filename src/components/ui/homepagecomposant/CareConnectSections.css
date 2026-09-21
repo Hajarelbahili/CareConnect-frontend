@@ -1,0 +1,756 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.why-careconnect,
+.how-careconnect {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  color: #10245b;
+}
+
+.why-container,
+.how-container {
+  width: 100%;
+}
+
+.section-label {
+  color: #1261e8;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+
+/* =========================================================
+   WHY CARECONNECT
+========================================================= */
+
+.why-careconnect {
+  position: relative;
+  overflow: hidden;
+  padding: 40px var(--container-padding);
+  box-sizing: border-box;
+}
+
+.why-container {
+  min-height: 530px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 30px;
+  position: relative;
+  width: 100%;
+}
+
+/* ---------- CONTENT ---------- */
+
+.why-content {
+  padding: 38px 0 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.why-content h2 {
+  margin: 0;
+  font-size: clamp(36px, 3.1vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  font-weight: 700;
+  color: #10245b;
+}
+
+.section-description {
+  max-width: 700px;
+  margin: 12px 0 22px;
+  color: #52658e;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* ---------- FEATURE GRID ---------- */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+
+  margin-right: -120px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.feature-card {
+  min-height: 126px;
+  padding: 16px 15px;
+  border: 1px solid #dfe9f7;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(36, 83, 150, 0.08);
+}
+
+.feature-icon {
+  min-width: 50px;
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon-blue {
+  background: #e9f2ff;
+  color: #1261e8;
+}
+
+.feature-icon-green {
+  background: #e6f8f0;
+  color: #16a875;
+}
+
+.feature-icon-purple {
+  background: #f1eaff;
+  color: #7c3aed;
+}
+
+.feature-icon-orange {
+  background: #fff0e3;
+  color: #ec7115;
+}
+
+.feature-icon-red {
+  background: #ffebee;
+  color: #ed4b55;
+}
+
+.feature-content h3 {
+  margin: 4px 0 7px;
+  color: #10245b;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.feature-content p {
+  margin: 0;
+  color: #52658e;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   MAIN VISUAL
+========================================================= */
+
+.main-visual {
+  position: relative;
+  min-height: 530px;
+  overflow: hidden;
+
+  border-radius: 0 0 0 150px;
+
+  background: #edf5ff;
+}
+
+.main-visual::before {
+  content: "";
+  position: absolute;
+  width: 530px;
+  height: 530px;
+
+  left: -100px;
+  top: -30px;
+
+  border-radius: 50%;
+
+  background: #edf5ff;
+}
+
+.woman-image {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  inset: 0;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: 1;
+}
+
+/* =========================================================
+   HEALTH BADGE
+========================================================= */
+
+.health-badge {
+  position: absolute;
+
+  top: 26px;
+  right: 22px;
+
+  z-index: 3;
+
+  min-width: 195px;
+  padding: 12px 17px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border-radius: 20px;
+
+  background: rgba(244, 249, 255, 0.94);
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 8px 25px rgba(30, 65, 120, 0.08);
+}
+
+.health-badge-icon {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #1261e8;
+  background: #e1edff;
+}
+.health-badge-icon:hover {
+  color: var(--color-primary-light);
+  background-color: var(--color-primary);
+}
+.health-badge p {
+  margin: 0;
+
+  color: #10245b;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.quote-card {
+  position: absolute;
+
+  right: 0;
+  bottom: 32px;
+
+  z-index: 3;
+
+  width: 220px;
+  padding: 20px 25px;
+
+  border-radius: 18px 0 0 18px;
+
+  background: rgba(221, 237, 255, 0.94);
+  backdrop-filter: blur(8px);
+}
+
+.quote-card p {
+  margin: 0;
+
+  color: #173264;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.quote-line {
+  display: block;
+
+  width: 45px;
+  height: 4px;
+
+  margin-top: 14px;
+
+  border-radius: 10px;
+
+  background: #1261e8;
+}
+
+/* =========================================================
+   HOW CARECONNECT WORKS
+========================================================= */
+
+.how-careconnect {
+  position: relative;
+  overflow: hidden;
+
+  padding: 40px var(--container-padding);
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(229, 241, 255, 0.8),
+      transparent 35%
+    ),
+    #fff;
+
+  border-radius: 30px 30px 0 0;
+}
+
+.how-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 40px;
+}
+
+.how-header h2 {
+  margin: 0;
+
+  font-size: clamp(35px, 3.1vw, 50px);
+  line-height: 1.08;
+
+  letter-spacing: -1.5px;
+
+  color: #10245b;
+}
+
+.how-header h2 span {
+  color: #1261e8;
+}
+
+.how-header > p {
+  margin: 35px 60px 0 0;
+
+  color: #52658e;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   STEPS
+========================================================= */
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 25px;
+}
+
+.step-wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.step-card {
+  width: 100%;
+
+  text-align: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+.step-number {
+  width: 47px;
+  height: 47px;
+
+  margin: 0 auto -6px 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #1261e8;
+  background: #e3efff;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.step-image-wrapper {
+  width: 150px;
+  height: 125px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.step-card h3 {
+  margin: 8px 0 5px;
+
+  color: #10245b;
+
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.step-card p {
+  max-width: 220px;
+
+  margin: 0 auto;
+
+  color: #607299;
+
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* ---------- CONNECTOR ---------- */
+
+.step-connector {
+  position: absolute;
+
+  top: 66px;
+  right: -5px;
+
+  width: 65px;
+
+  border-top: 2px dashed #b8d3fa;
+
+  z-index: 1;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta-wrapper {
+  position: relative;
+  z-index: 5;
+
+  width: min(740px, 90%);
+
+  margin: 18px auto 0;
+  padding: 15px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  border-radius: 17px;
+
+  background: #f0f6ff;
+}
+
+.cta-content h3 {
+  margin: 0 0 4px;
+
+  color: #10245b;
+
+  font-size: 16px;
+}
+
+.cta-content p {
+  margin: 0;
+
+  color: #607299;
+
+  font-size: 13px;
+}
+
+.cta-button {
+  border: none;
+
+  padding: 12px 21px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  border-radius: 9px;
+
+  background: #1261e8;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #0b4fc7;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   HANDWRITTEN NOTE
+========================================================= */
+
+.handwritten-note {
+  position: absolute;
+
+  right: 62px;
+  bottom: 76px;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #10245b;
+
+  font-family: "Comic Sans MS", "Segoe Print", cursive;
+
+  font-size: 13px;
+  font-style: italic;
+
+  transform: rotate(-4deg);
+
+  z-index: 5;
+}
+
+.note-arrow {
+  width: 75px;
+  height: 45px;
+
+  transform: rotate(-8deg);
+}
+
+/* =========================================================
+   DECORATIVE LEAVES
+========================================================= */
+
+.decorative-leaves {
+  position: absolute;
+
+  width: 140px;
+
+  opacity: 0.5;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.decorative-leaves-left {
+  left: -35px;
+  bottom: -20px;
+}
+
+.decorative-leaves-right {
+  right: -35px;
+  bottom: -20px;
+
+  transform: scaleX(-1);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .why-container {
+    grid-template-columns: 1fr;
+  }
+
+  .main-visual {
+    min-height: 450px;
+    border-radius: 30px;
+  }
+
+  .woman-image {
+    object-position: center 35%;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-right: 0;
+  }
+
+  .how-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .how-header > p {
+    margin: 0;
+  }
+
+  .steps-container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 35px;
+  }
+
+  .step-connector {
+    display: none;
+  }
+
+  .cta-wrapper {
+    margin-top: 35px;
+  }
+
+  .handwritten-note {
+    display: none;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .why-container,
+  .how-container {
+    width: 90%;
+  }
+
+  .why-content {
+    padding-top: 30px;
+  }
+
+  .why-content h2,
+  .how-header h2 {
+    font-size: 34px;
+  }
+
+  .section-description {
+    font-size: 15px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    min-height: auto;
+  }
+
+  .main-visual {
+    min-height: 400px;
+  }
+
+  .health-badge {
+    top: 15px;
+    right: 15px;
+    transform: scale(0.9);
+    transform-origin: top right;
+  }
+
+  .quote-card {
+    bottom: 15px;
+    width: 200px;
+    padding: 16px 20px;
+  }
+
+  .how-careconnect {
+    padding-top: 35px;
+  }
+
+  .steps-container {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .step-wrapper {
+    display: block;
+  }
+
+  .step-number {
+    margin: 0 auto -5px 0;
+  }
+
+  .step-image-wrapper {
+    width: 160px;
+    height: 130px;
+  }
+
+  .step-card p {
+    max-width: 300px;
+  }
+
+  .cta-wrapper {
+    width: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 20px;
+  }
+
+  .cta-button {
+    justify-content: center;
+  }
+
+  .decorative-leaves {
+    width: 100px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .why-content h2,
+  .how-header h2 {
+    font-size: 30px;
+  }
+
+  .main-visual {
+    min-height: 360px;
+  }
+
+  .health-badge {
+    min-width: auto;
+    padding: 9px 12px;
+  }
+
+  .health-badge-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .health-badge p {
+    font-size: 12px;
+  }
+
+  .quote-card {
+    width: 185px;
+  }
+
+  .quote-card p {
+    font-size: 12px;
+  }
+}

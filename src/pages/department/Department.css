@@ -1,0 +1,140 @@
+.department-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #ffffff;
+}
+
+/* =========================
+   DEPARTMENT SECTION
+========================= */
+
+.department-section {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 30px var(--container-padding);
+  box-sizing: border-box;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.department-section__header {
+  width: 100%;
+  padding: 40px var(--container-padding);
+
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.department-section__header h2 {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: 23px;
+  line-height: 1.2;
+
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.department-grid {
+  max-width: 1120px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 10px;
+
+  padding: 14px;
+
+  background: #f8f7f8;
+
+  border-radius: 9px;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.department-empty {
+  max-width: 1120px;
+
+  min-height: 250px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f8f7f8;
+
+  border-radius: 9px;
+
+  color: #888;
+
+  font-size: 13px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .department-section {
+    padding: 50px 18px 60px;
+  }
+
+  .department-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .department-section {
+    padding: 40px 14px 50px;
+  }
+
+  .department-section__header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    margin-bottom: 20px;
+  }
+
+  .department-section__header h2 {
+    font-size: 21px;
+  }
+
+  .department-section__header .search-bar {
+    width: 100%;
+  }
+
+  .department-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+
+    padding: 8px;
+  }
+}

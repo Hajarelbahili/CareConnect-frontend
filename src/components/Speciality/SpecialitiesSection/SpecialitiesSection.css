@@ -1,0 +1,113 @@
+.specialities-section {
+  width: 100%;
+  padding: 70px 52px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.specialities-section__header {
+  max-width: 720px;
+  margin-bottom: 38px;
+}
+
+.specialities-section__eyebrow {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: var(--color-primary);
+}
+
+.specialities-section__title {
+  margin: 0;
+
+  font-size: 34px;
+  line-height: 1.25;
+  font-weight: 700;
+
+  color: #20265c;
+}
+
+.specialities-section__description {
+  margin: 14px 0 0;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: #7b82a8;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.specialities-section__grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+
+  width: 100%;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.specialities-section__empty {
+  grid-column: 1 / -1;
+
+  margin: 0;
+  padding: 40px;
+
+  text-align: center;
+
+  border: 1px dashed #dcdcec;
+  border-radius: 18px;
+
+  color: #7b82a8;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+  .specialities-section__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .specialities-section {
+    padding: 55px 30px;
+  }
+
+  .specialities-section__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .specialities-section {
+    padding: 45px 20px;
+  }
+
+  .specialities-section__title {
+    font-size: 28px;
+  }
+
+  .specialities-section__grid {
+    grid-template-columns: 1fr;
+  }
+}

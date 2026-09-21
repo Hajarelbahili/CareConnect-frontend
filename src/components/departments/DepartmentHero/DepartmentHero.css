@@ -1,0 +1,246 @@
+.department-hero {
+  width: 100%;
+  padding: 18px 52px 4px;
+  min-height: 500px;
+  background: var(--color-background);
+}
+
+/* =========================
+   BREADCRUMB
+========================= */
+
+.department-hero__breadcrumb {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+/* =========================
+   MAIN HERO
+========================= */
+
+.department-hero__main {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+
+  align-items: center;
+
+  gap: 35px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.department-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  max-width: 620px;
+}
+
+.department-hero__badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 14px;
+
+  border-radius: 999px;
+
+  background: #eee8ff;
+  color: var(--color-primary);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  margin-bottom: 18px;
+}
+
+.department-hero__title {
+  margin: 0;
+
+  font-size: 56px;
+  line-height: 1.05;
+  font-weight: 700;
+
+  color: var(--color-primary);
+}
+
+.department-hero__subtitle {
+  margin: 16px 0 18px;
+
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 500;
+
+  color: #454b78;
+}
+
+.department-hero__description {
+  margin: 0;
+
+  max-width: 560px;
+
+  font-size: 16px;
+  line-height: 1.7;
+
+  color: #72799b;
+}
+
+/* =========================
+   DECORATIVE QUOTE
+========================= */
+
+.department-hero__quote {
+  position: absolute;
+
+  left: 49%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+
+  font-size: 32px;
+  line-height: 0.95;
+
+  color: #7580ad;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.department-hero__quote span:nth-child(1) {
+  transform: rotate(-3deg);
+}
+
+.department-hero__quote span:nth-child(2) {
+  transform: rotate(-2deg);
+}
+
+.department-hero__quote span:nth-child(3) {
+  transform: rotate(-4deg);
+}
+
+.department-hero__quote span:nth-child(4) {
+  transform: rotate(-5deg);
+}
+
+/* Petit cœur */
+
+.department-hero__heart {
+  position: absolute;
+
+  left: -42px;
+  bottom: 8px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 42px;
+
+  color: #b58ae8;
+
+  transform: rotate(-15deg);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.department-hero__image-wrapper {
+  width: 100%;
+  height: 440px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+.department-hero__image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+  .department-hero__quote {
+    left: 50%;
+
+    font-size: 27px;
+  }
+
+  .department-hero__title {
+    font-size: 48px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+  .department-hero__main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 70px;
+  }
+  .department-hero {
+    padding: 18px 30px 35px;
+  }
+
+  .department-hero__content {
+    max-width: 100%;
+  }
+
+  .department-hero__image-wrapper {
+    height: 320px;
+  }
+
+  .department-hero__quote {
+    display: none;
+  }
+
+  .department-hero__title {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 600px) {
+  .department-hero {
+    padding: 15px 20px 30px;
+  }
+
+  .department-hero__breadcrumb {
+    margin-bottom: 22px;
+  }
+
+  .department-hero__title {
+    font-size: 36px;
+  }
+
+  .department-hero__subtitle {
+    font-size: 19px;
+  }
+
+  .department-hero__image-wrapper {
+    height: 250px;
+    border-radius: 20px;
+  }
+}
