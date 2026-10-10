@@ -1,0 +1,73 @@
+.appointment-stepper {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 40px;
+  background-color: aqua;
+}
+
+.appointment-stepper__step {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--color-text-light);
+  font-size: 13px;
+  text-align: center;
+}
+
+.appointment-stepper__indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  background: var(--color-white);
+  color: var(--color-text-light);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  position: relative;
+  z-index: 2;
+}
+
+.appointment-stepper__step--active .appointment-stepper__indicator {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.appointment-stepper__step--completed .appointment-stepper__indicator {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.appointment-stepper__step--active,
+.appointment-stepper__step--completed {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.appointment-stepper__line {
+  position: absolute;
+  top: 15px;
+  left: calc(50% + 15px);
+  width: calc(100% - 30px);
+
+  height: 1px;
+  background: var(--color-border);
+}
+
+.appointment-stepper__step--completed .appointment-stepper__line {
+  background: var(--color-primary);
+}

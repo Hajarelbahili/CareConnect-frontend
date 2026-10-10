@@ -1,0 +1,504 @@
+.datetime-step {
+  width: 100%;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.datetime-step__header {
+  margin-bottom: 30px;
+}
+
+.datetime-step__step {
+  display: inline-block;
+  margin-bottom: 8px;
+
+  color: var(--color-primary);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.datetime-step__header h1 {
+  margin: 0 0 8px;
+
+  color: var(--color-text);
+
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.datetime-step__header p {
+  margin: 0;
+
+  color: var(--color-text-light);
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.datetime-step__header strong {
+  color: var(--color-primary);
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.datetime-step__content {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(300px, 0.9fr);
+
+  gap: 20px;
+}
+
+/* =========================================
+   CALENDAR
+========================================= */
+
+.datetime-calendar {
+  padding: 22px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+
+  background: var(--color-white);
+}
+
+/* =========================================
+   CALENDAR TITLE
+========================================= */
+
+.datetime-calendar__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 24px;
+}
+
+.datetime-calendar__title-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 10px;
+
+  background: rgba(58, 118, 200, 0.08);
+
+  color: var(--color-primary);
+}
+
+.datetime-calendar__title > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.datetime-calendar__title span {
+  color: var(--color-text);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.datetime-calendar__title small {
+  color: var(--color-text-light);
+
+  font-size: 11px;
+}
+
+/* =========================================
+   CALENDAR HEADER
+========================================= */
+
+.datetime-calendar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.datetime-calendar__header h2 {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.datetime-calendar__header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+
+  background: var(--color-white);
+  color: var(--color-text);
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.datetime-calendar__header button:hover {
+  border-color: var(--color-primary);
+
+  background: rgba(58, 118, 200, 0.05);
+
+  color: var(--color-primary);
+}
+
+/* =========================================
+   WEEK DAYS
+========================================= */
+
+.datetime-calendar__weekdays {
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 5px;
+
+  margin-bottom: 8px;
+}
+
+.datetime-calendar__weekdays span {
+  padding: 6px 0;
+
+  color: var(--color-text-light);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-align: center;
+}
+
+/* =========================================
+   DAYS
+========================================= */
+
+.datetime-calendar__days {
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 5px;
+}
+
+.datetime-calendar__day,
+.datetime-calendar__empty {
+  aspect-ratio: 1;
+}
+
+.datetime-calendar__day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+
+  border: none;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: var(--color-text);
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.datetime-calendar__day:hover {
+  background: var(--color-background);
+
+  color: var(--color-primary);
+}
+
+.datetime-calendar__day--selected {
+  background: var(--color-primary);
+
+  color: var(--color-white);
+
+  font-weight: 600;
+}
+
+.datetime-calendar__day--selected:hover {
+  background: var(--color-primary);
+
+  color: var(--color-white);
+}
+
+/* =========================================
+   TIME SLOTS
+========================================= */
+
+.datetime-slots {
+  padding: 22px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+
+  background: var(--color-white);
+}
+
+/* =========================================
+   TIME TITLE
+========================================= */
+
+.datetime-slots__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 24px;
+}
+
+.datetime-slots__title-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 10px;
+
+  background: rgba(111, 207, 214, 0.15);
+
+  color: var(--color-accent);
+}
+
+.datetime-slots__title > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.datetime-slots__title span {
+  color: var(--color-text);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.datetime-slots__title small {
+  color: var(--color-text-light);
+
+  font-size: 11px;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.datetime-slots__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 230px;
+
+  padding: 20px;
+
+  color: var(--color-text-light);
+
+  text-align: center;
+}
+
+.datetime-slots__empty svg {
+  margin-bottom: 12px;
+
+  color: var(--color-primary-light);
+}
+
+.datetime-slots__empty p {
+  max-width: 200px;
+
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   TIME LIST
+========================================= */
+
+.datetime-slots__list {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 9px;
+}
+
+.datetime-slot {
+  padding: 11px 8px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+
+  background: var(--color-white);
+
+  color: var(--color-text);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.datetime-slot:hover {
+  border-color: var(--color-primary-light);
+
+  background: rgba(58, 118, 200, 0.04);
+}
+
+.datetime-slot--selected {
+  border-color: var(--color-primary);
+
+  background: rgba(58, 118, 200, 0.08);
+
+  color: var(--color-primary);
+
+  font-weight: 600;
+}
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.datetime-step__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 30px;
+}
+
+.datetime-step__back,
+.datetime-step__next {
+  min-width: 110px;
+
+  padding: 11px 22px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.datetime-step__back {
+  border: 1px solid var(--color-border);
+
+  background: var(--color-white);
+
+  color: var(--color-text);
+}
+
+.datetime-step__back:hover {
+  border-color: var(--color-primary);
+
+  color: var(--color-primary);
+}
+
+.datetime-step__next {
+  border: none;
+
+  background: var(--color-primary);
+
+  color: var(--color-white);
+}
+
+.datetime-step__next:hover:not(:disabled) {
+  background: #2f65ad;
+}
+
+.datetime-step__next:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+  .datetime-step__content {
+    grid-template-columns: 1fr;
+  }
+
+  .datetime-slots__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+  .datetime-step__header h1 {
+    font-size: 25px;
+  }
+
+  .datetime-step__header p {
+    font-size: 14px;
+  }
+
+  .datetime-calendar,
+  .datetime-slots {
+    padding: 16px;
+  }
+
+  .datetime-calendar__day {
+    font-size: 12px;
+  }
+
+  .datetime-slots__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .datetime-step__back,
+  .datetime-step__next {
+    min-width: 95px;
+
+    padding: 10px 16px;
+  }
+}

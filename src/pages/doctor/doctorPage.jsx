@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import GenericBanner from "../../components/common/GenericBanner/GenericBanner";
 
 import { useSearchSpecialitiesQuery } from "../../features/speciality/specialityApi";
 import { useGetDepartmentsSummaryQuery } from "../../features/department/departmentApi";
+import { useSearchDoctorsQuery } from "../../features/doctor/doctorApi";
 
+import Pagination from "../../components/common/Pagination/Pagination";
+import DoctorCard from "../../components/doctor/DoctorCard/DoctorCard";
 import SearchableSelect from "../../components/ui/SearchableSelect/SearchableSelect";
 import SearchBar from "../../components/ui/SearchBar/SearchBar";
+import DoctorInfoModal from "../../components/doctor/doctormodel/DoctorInfoModal";
 
 import doctorsImage from "../../assets/images/doctors-department.webp";
 
@@ -15,10 +20,23 @@ import "./doctorPage.css";
 
 function DoctorPage() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
-  const [departmentId, setDepartmentId] = useState(id);
   const [specialityId, setSpecialityId] = useState("");
   const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // =========================
+  // SELECTED DOCTOR
+  // =========================
+
+  const [selectedDoctor, setSelectedDoctor] = useState(null);
+
+  // =========================
+  // DEPARTMENT ID
+  // =========================
+
+  const departmentId = id;
 
   // =========================
   // DEPARTMENTS
@@ -65,20 +83,69 @@ function DoctorPage() {
   }));
 
   // =========================
+  // DOCTORS
+  // =========================
+
+  const {
+    data: doctorsresponse,
+    isLoading: isDoctorsLoading,
+    isError: isDoctorsError
+  } = useSearchDoctorsQuery(
+    {
+      department: departmentId,
+      speciality: specialityId || undefined,
+      username: search || undefined,
+      active: true,
+      page: currentPage - 1,
+      size: 4
+    },
+    {
+      skip: !departmentId
+    }
+  );
+
+  const doctors = doctorsresponse?.content ?? [];
+  const totalPages = doctorsresponse?.totalPages ?? 0;
+
+  // =========================
   // HANDLERS
   // =========================
 
   const handleDepartmentChange = (newDepartmentId) => {
-    setDepartmentId(newDepartmentId);
+    navigate(`/doctors/departments/${newDepartmentId}`);
+
     setSpecialityId("");
+    setCurrentPage(1);
+  };
+
+  const handleSpecialityChange = (newSpecialityId) => {
+    setSpecialityId(newSpecialityId);
+    setCurrentPage(1);
   };
 
   const handleSearchChange = (value) => {
     setSearch(value);
+    setCurrentPage(1);
+  };
+
+  const handleMoreInformation = (doctor) => {
+    setSelectedDoctor(doctor);
+  };
+
+  const handleCloseDoctorModal = () => {
+    setSelectedDoctor(null);
+  };
+
+  const handleBookAppointment = () => {
+    console.log("Book appointment", selectedDoctor);
   };
 
   return (
     <div className="doctorpage">
+      {/* =========================
+          BANNER
+      ========================= */}
+
       <GenericBanner
         badge="Department"
         title="Explore Our"
@@ -93,7 +160,12 @@ function DoctorPage() {
         label="Doctors"
         path="/doctors/departments/*"
       />
+
       <div className="doctorsection">
+        {/* =========================
+            FILTERS
+        ========================= */}
+
         <div className="searchsection">
           <SearchableSelect
             label="Select Department"
@@ -110,17 +182,64 @@ function DoctorPage() {
             searchPlaceholder="Search speciality..."
             options={specialityOptions}
             value={specialityId}
-            onChange={setSpecialityId}
+            onChange={handleSpecialityChange}
           />
 
-          <SearchBar
-            placeholder="Insert doctor's name"
-            buttonText="Search"
-            value={search}
-            onChange={handleSearchChange}
-          />
+          <div className="doctor-searchbar">
+            <SearchBar
+              placeholder="Insert doctor's name"
+              buttonText="Search"
+              value={search}
+              onChange={handleSearchChange}
+            />
+          </div>
         </div>
+
+        {/* =========================
+            DOCTORS
+        ========================= */}
+
+        <div className="doctors-list">
+          {isDoctorsLoading && <p>Loading doctors...</p>}
+
+          {isDoctorsError && <p>Unable to load doctors. Please try again.</p>}
+
+          {!isDoctorsLoading && !isDoctorsError && doctors.length === 0 && (
+            <p>No doctors found.</p>
+          )}
+
+          {!isDoctorsLoading &&
+            !isDoctorsError &&
+            doctors.map((doctor) => (
+              <DoctorCard
+                key={doctor.doctorId}
+                doctor={doctor}
+                onMoreInformation={handleMoreInformation}
+              />
+            ))}
+        </div>
+
+        {/* =========================
+            PAGINATION
+        ========================= */}
+
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
       </div>
+
+      {/* =========================
+          DOCTOR MODAL
+      ========================= */}
+
+      <DoctorInfoModal
+        doctor={selectedDoctor}
+        isOpen={!!selectedDoctor}
+        onClose={handleCloseDoctorModal}
+        onBookAppointment={handleBookAppointment}
+      />
     </div>
   );
 }

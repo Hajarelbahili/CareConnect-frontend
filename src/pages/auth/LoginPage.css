@@ -1,0 +1,902 @@
+/* =========================================================
+   LOGIN PAGE - CARECONNECT
+========================================================= */
+
+.login-page {
+  position: relative;
+
+  min-height: 100vh;
+  width: 100%;
+
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    var(--color-white) 0%,
+    #f4f7fc 48%,
+    var(--color-background) 100%
+  );
+
+  color: var(--color-text);
+
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================================================
+   BACKGROUND DECORATIONS
+========================================================= */
+
+.login-background-shape {
+  position: absolute;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+}
+
+.login-shape-one {
+  width: 650px;
+  height: 650px;
+
+  top: -350px;
+  right: -100px;
+
+  background: rgba(161, 190, 229, 0.18);
+}
+
+.login-shape-two {
+  width: 550px;
+  height: 550px;
+
+  bottom: -330px;
+  left: 180px;
+
+  background: rgba(111, 207, 214, 0.08);
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.login-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(var(--container-width), calc(100% - 48px));
+
+  min-height: 100vh;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.08fr)
+    minmax(460px, 0.92fr);
+
+  align-items: center;
+
+  gap: 70px;
+
+  padding: 40px 30px;
+}
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.login-intro {
+  position: relative;
+
+  min-height: 700px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 40px 0;
+}
+
+.intro-content {
+  position: relative;
+
+  z-index: 3;
+
+  max-width: 600px;
+}
+
+/* =========================================================
+   WELCOME BADGE
+========================================================= */
+
+.welcome-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 9px 18px;
+
+  border-radius: 30px;
+
+  background: rgba(161, 190, 229, 0.28);
+
+  color: var(--color-primary);
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  margin-bottom: 22px;
+}
+
+/* =========================================================
+   INTRO TITLE
+========================================================= */
+
+.intro-content h1 {
+  margin: 0;
+
+  max-width: 600px;
+
+  color: var(--color-text);
+
+  font-size: 45px;
+
+  line-height: 1.04;
+
+  letter-spacing: -2.5px;
+
+  font-weight: 750;
+}
+
+.intro-content h1 span {
+  display: block;
+
+  color: var(--color-primary);
+}
+
+/* =========================================================
+   INTRO DESCRIPTION
+========================================================= */
+
+.intro-description {
+  max-width: 540px;
+
+  margin: 20px 0 34px;
+
+  color: var(--color-text-light);
+
+  font-size: 16px;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.login-features {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.login-feature {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+/* FEATURE ICON */
+
+.feature-icon {
+  flex-shrink: 0;
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(145deg, #edf4fc, #dceafa);
+
+  color: var(--color-primary);
+
+  border: 1px solid rgba(161, 190, 229, 0.35);
+}
+
+.login-feature h3 {
+  margin: 0 0 5px;
+
+  color: var(--color-text);
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+.login-feature p {
+  margin: 0;
+
+  color: var(--color-text-light);
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   DOCTORS VISUAL
+========================================================= */
+
+.doctors-visual {
+  position: absolute;
+
+  right: -30px;
+  bottom: 75px;
+
+  width: 500px;
+  height: 430px;
+
+  pointer-events: none;
+}
+
+.doctor-circle {
+  position: absolute;
+
+  left: 55px;
+  bottom: 0;
+
+  width: 430px;
+  height: 390px;
+
+  border-radius: 48% 52% 42% 58% / 55% 42% 58% 45%;
+
+  background: linear-gradient(145deg, #e8f1fc, #d2e2f6);
+}
+
+/* =========================================================
+   DOCTORS IMAGE
+========================================================= */
+
+.doctors-image {
+  position: absolute;
+
+  left: 55px;
+  bottom: -5px;
+
+  width: 430px;
+
+  height: auto;
+
+  max-width: none;
+
+  object-fit: contain;
+
+  z-index: 2;
+}
+
+/* =========================================================
+   FLOATING HEART
+========================================================= */
+
+.heart-floating {
+  position: absolute;
+
+  top: 0;
+  right: 15px;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  color: var(--color-accent);
+
+  border: 1px solid rgba(161, 190, 229, 0.35);
+
+  box-shadow: 0 15px 35px rgba(58, 118, 200, 0.12);
+
+  backdrop-filter: blur(8px);
+}
+
+/* =========================================================
+   SLOGAN
+========================================================= */
+
+.intro-slogan {
+  position: absolute;
+
+  left: 0;
+  bottom: 15px;
+
+  color: var(--color-primary);
+
+  font-size: 27px;
+
+  line-height: 1.25;
+
+  font-weight: 600;
+
+  font-style: italic;
+
+  font-family: "Segoe Script", "Brush Script MT", cursive;
+
+  transform: rotate(-4deg);
+}
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.login-card {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 485px;
+
+  justify-self: end;
+
+  padding: 48px 52px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(219, 227, 240, 0.8);
+
+  box-shadow: 0 25px 70px rgba(30, 41, 59, 0.1);
+
+  backdrop-filter: blur(10px);
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.login-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 27px;
+
+  color: var(--color-primary);
+
+  font-size: 21px;
+
+  font-weight: 750;
+}
+
+/* Logo symbol */
+
+.logo-symbol {
+  position: relative;
+
+  width: 31px;
+  height: 31px;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 3px;
+
+  transform: rotate(45deg);
+}
+
+.logo-symbol span {
+  display: block;
+
+  border-radius: 3px;
+
+  background: var(--color-primary);
+}
+
+/* =========================================================
+   LOGIN HEADER
+========================================================= */
+
+.login-header h2 {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: 36px;
+
+  line-height: 1.15;
+
+  letter-spacing: -1.2px;
+
+  font-weight: 750;
+}
+
+.login-header p {
+  margin: 12px 0 30px;
+
+  max-width: 470px;
+
+  color: var(--color-text-light);
+
+  font-size: 16px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.login-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 19px;
+}
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.form-group label {
+  color: var(--color-text);
+
+  font-size: 16px;
+
+  font-weight: 650;
+}
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.input-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  height: 42px;
+}
+
+.input-wrapper input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 48px 0 56px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 12px;
+
+  outline: none;
+
+  background: var(--color-white);
+
+  color: var(--color-text);
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input-wrapper input::placeholder {
+  color: #9aa9bd;
+}
+
+.input-wrapper input:focus {
+  border-color: var(--color-primary);
+
+  box-shadow: 0 0 0 4px rgba(58, 118, 200, 0.1);
+}
+
+/* Input icon */
+
+.input-icon {
+  position: absolute;
+
+  left: 18px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #71839d;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   PASSWORD TOGGLE
+========================================================= */
+
+.password-toggle {
+  position: absolute;
+
+  right: 16px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #71839d;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: var(--color-primary);
+}
+
+/* =========================================================
+   ERRORS
+========================================================= */
+
+.input-wrapper.input-error input {
+  border-color: var(--color-danger);
+}
+
+.field-error {
+  margin: 0;
+
+  color: var(--color-danger);
+
+  font-size: 13px;
+}
+
+.server-error {
+  padding: 12px 15px;
+
+  border-radius: 9px;
+
+  background: var(--color-danger-light);
+
+  color: var(--color-danger);
+
+  font-size: 14px;
+
+  text-align: center;
+}
+
+/* =========================================================
+   FORGOT PASSWORD
+========================================================= */
+
+.forgot-password-wrapper {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: -10px;
+}
+
+.forgot-password {
+  border: none;
+
+  padding: 0;
+
+  background: transparent;
+
+  color: var(--color-primary);
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  text-decoration: underline;
+
+  cursor: pointer;
+}
+
+.forgot-password:hover {
+  color: #2f65ae;
+}
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.login-button {
+  width: 100%;
+
+  min-height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background: linear-gradient(135deg, var(--color-primary), #2f68b5);
+
+  color: var(--color-white);
+
+  font-family: inherit;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 25px rgba(58, 118, 200, 0.22);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.login-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow: 0 14px 30px rgba(58, 118, 200, 0.28);
+}
+
+.login-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.login-button:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   SIGN UP
+========================================================= */
+
+.signup-section {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 18px;
+
+  margin-top: 23px;
+
+  padding-top: 29px;
+
+  border-top: 1px solid var(--color-border);
+
+  color: var(--color-text-light);
+
+  font-size: 15px;
+}
+
+.signup-button {
+  min-width: 117px;
+
+  height: 41px;
+
+  padding: 0 20px;
+
+  border: 1px solid var(--color-primary-light);
+
+  border-radius: 12px;
+
+  background: rgba(161, 190, 229, 0.15);
+
+  color: var(--color-primary);
+
+  font-family: inherit;
+
+  font-size: 16px;
+
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.signup-button:hover {
+  background: rgba(161, 190, 229, 0.3);
+
+  border-color: var(--color-primary);
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .login-container {
+    grid-template-columns: 1fr;
+
+    max-width: 650px;
+
+    padding: 40px 0;
+  }
+
+  .login-intro {
+    min-height: auto;
+
+    padding: 30px 0 0;
+  }
+
+  .intro-content {
+    max-width: 100%;
+  }
+
+  .doctors-visual {
+    display: none;
+  }
+
+  .intro-slogan {
+    display: none;
+  }
+
+  .login-card {
+    justify-self: center;
+
+    max-width: 570px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+  .login-page {
+    overflow-y: auto;
+  }
+
+  .login-container {
+    width: 100%;
+
+    max-width: none;
+
+    padding: 25px var(--container-padding) 40px;
+
+    gap: 30px;
+  }
+
+  .login-intro {
+    padding: 15px 0 0;
+  }
+
+  .welcome-badge {
+    font-size: 14px;
+
+    padding: 8px 15px;
+  }
+
+  .intro-content h1 {
+    font-size: 42px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .intro-description {
+    font-size: 16px;
+
+    margin-top: 17px;
+  }
+
+  .login-features {
+    gap: 15px;
+  }
+
+  .feature-icon {
+    width: 53px;
+    height: 53px;
+  }
+
+  .login-feature h3 {
+    font-size: 15px;
+  }
+
+  .login-feature p {
+    font-size: 13px;
+  }
+
+  .login-card {
+    padding: 30px 23px;
+
+    border-radius: 17px;
+  }
+
+  .login-logo {
+    margin-bottom: 22px;
+
+    font-size: 19px;
+  }
+
+  .login-header h2 {
+    font-size: 29px;
+  }
+
+  .login-header p {
+    font-size: 15px;
+
+    margin-bottom: 25px;
+  }
+
+  .signup-section {
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 12px;
+  }
+
+  .signup-button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .intro-content h1 {
+    font-size: 36px;
+  }
+
+  .login-card {
+    padding: 27px 18px;
+  }
+
+  .login-header h2 {
+    font-size: 27px;
+  }
+
+  .login-button {
+    min-height: 55px;
+  }
+}

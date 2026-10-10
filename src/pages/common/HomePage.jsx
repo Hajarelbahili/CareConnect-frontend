@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import DepartmentSection from "../../components/departments/DepartmentSection/DepartmentSection";
 import DoctorSection from "../../components/doctor/DoctorSection/DoctorSection";
 import CareConnectSections from "../../components/ui/homepagecomposant/WhyCareConnect";
 import "./Home.css";
 
 function HomePage() {
+  const navigate = useNavigate();
+
   return (
     <div className="home">
       {/* =========================
@@ -24,9 +27,17 @@ function HomePage() {
             </p>
 
             <div className="home-hero-actions">
-              <button className="hero-primary-button">Find a Doctor</button>
+              <button
+                className="hero-primary-button"
+                onClick={() => navigate("//doctors/departments/11")}
+              >
+                Find a Doctor
+              </button>
 
-              <button className="hero-secondary-button">
+              <button
+                className="hero-secondary-button"
+                onClick={() => navigate("/appointmentBooking")}
+              >
                 Book an Appointment
               </button>
             </div>

@@ -6,7 +6,7 @@ export const apiSlice = createApi({
 
   baseQuery: baseQuery(),
 
-  tagTypes: [],
+  tagTypes: ["PatientAppointments"],
 
   endpoints: () => ({})
 });

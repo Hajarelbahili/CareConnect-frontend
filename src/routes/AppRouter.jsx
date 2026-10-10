@@ -16,6 +16,7 @@ import NotFoundPage from "../pages/common/NotFoundPage";
 import UnauthorizedPage from "../pages/common/UnauthorizedPage";
 import DepartmentDetails from "../pages/department/DepartmentDetails";
 import DoctorPage from "../pages/doctor/doctorPage";
+import AppointmentBookingPage from "../pages/appointment/AppointmentBookingPage";
 function AppRouter() {
   return (
     <BrowserRouter>
@@ -26,18 +27,24 @@ function AppRouter() {
           <Route path="/departments" element={<DepartmetPage />} />
           <Route path="/departments/:id" element={<DepartmentDetails />} />
           <Route path="/doctors/departments/:id" element={<DoctorPage />} />
-        </Route>
-
-        {/* GUEST */}
-        <Route element={<GuestRoute />}>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
         </Route>
 
+        {/* GUEST 
+        <Route element={<GuestRoute />}>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+        </Route>
+*/}
         {/* PATIENT */}
         <Route element={<ProtectedRoute allowedRoles={[ROLES.PATIENT]} />}>
           <Route element={<DashboardLayout />}>
             <Route path="/patient" element={<PatientDashboardPage />} />
+            <Route
+              path="/appointmentBooking"
+              element={<AppointmentBookingPage />}
+            />
           </Route>
         </Route>
 

@@ -193,6 +193,12 @@
 
   border-radius: 2px;
 }
+.link {
+  color: #34445b;
+  text-decoration: none;
+
+  white-space: nowrap;
+}
 
 /* =========================================================
    DOCTORS

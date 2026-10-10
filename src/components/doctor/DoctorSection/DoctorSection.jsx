@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { useGetDepartmentsSummaryQuery } from "../../../features/department/departmentApi";
 import { useSearchDoctorsQuery } from "../../../features/doctor/doctorApi";
 import DoctorCard from "../DoctorCard/DoctorCard";
+import DoctorInfoModal from "../../doctor/doctormodel/DoctorInfoModal";
 import HorizontalScroll from "../../common/Scroll/HorizontalScroll";
 import "./DoctorSection.css";
 
 function DoctorSection() {
   const [selectedDepartmentId, setSelectedDepartmentId] = useState(null);
-
+  const [selectedDoctor, setSelectedDoctor] = useState(null);
   // =========================
   // Departments
   // =========================
@@ -50,6 +51,14 @@ function DoctorSection() {
 
   const doctors = doctorsresponse?.content ?? [];
   console.log("doctors", doctors);
+
+  const handleMoreInformation = (doctor) => {
+    setSelectedDoctor(doctor);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedDoctor(null);
+  };
   // =========================
   // Loading departments
   // =========================
@@ -121,8 +130,9 @@ function DoctorSection() {
               <span></span>
               <span></span>
             </span>
-
-            <span>View All</span>
+            <a href="/departments" className="link">
+              View All
+            </a>
           </button>
         </HorizontalScroll>
       </div>
@@ -149,7 +159,11 @@ function DoctorSection() {
             {/* Doctors */}
 
             {doctors.slice(0, 4).map((doctor) => (
-              <DoctorCard key={doctor.doctorId} doctor={doctor} />
+              <DoctorCard
+                key={doctor.doctorId}
+                doctor={doctor}
+                onMoreInformation={handleMoreInformation}
+              />
             ))}
 
             {/* View All Doctors */}
@@ -177,6 +191,14 @@ function DoctorSection() {
           </div>
         )}
       </div>
+      <DoctorInfoModal
+        doctor={selectedDoctor}
+        isOpen={!!selectedDoctor}
+        onClose={handleCloseModal}
+        onBookAppointment={() => {
+          console.log("Book appointment:", selectedDoctor);
+        }}
+      />
     </section>
   );
 }

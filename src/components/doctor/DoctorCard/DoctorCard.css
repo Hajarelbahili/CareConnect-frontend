@@ -137,7 +137,8 @@
   line-height: 1;
 
   font-weight: 500;
-
+  border: none;
+  background-color: transparent;
   text-decoration: none;
 }
 

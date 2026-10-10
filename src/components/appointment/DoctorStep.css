@@ -1,0 +1,258 @@
+.doctor-step {
+  width: 100%;
+}
+
+.doctor-step__header {
+  margin-bottom: 28px;
+}
+
+.doctor-step__step {
+  display: inline-block;
+  margin-bottom: 8px;
+
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.doctor-step__header h1 {
+  margin: 0 0 8px;
+
+  color: var(--color-text);
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.doctor-step__header p {
+  margin: 0;
+
+  color: var(--color-text-light);
+  font-size: 15px;
+}
+
+.doctor-step__header strong {
+  color: var(--color-primary);
+}
+
+.doctor-step__search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  height: 46px;
+  margin-bottom: 22px;
+  padding: 0 14px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+
+  color: var(--color-text-light);
+}
+
+.doctor-step__search:focus-within {
+  border-color: var(--color-primary);
+
+  box-shadow: 0 0 0 3px rgba(58, 118, 200, 0.1);
+}
+
+.doctor-step__search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.doctor-step__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.doctor-selection-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  position: relative;
+
+  width: 100%;
+  min-height: 105px;
+  padding: 14px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+
+  background: var(--color-white);
+  color: var(--color-text);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.doctor-selection-card:hover {
+  border-color: var(--color-primary-light);
+  transform: translateY(-2px);
+}
+
+.doctor-selection-card--selected {
+  border-color: var(--color-primary);
+  background: rgba(58, 118, 200, 0.06);
+}
+
+.doctor-selection-card__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 64px;
+  height: 64px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background: var(--color-background);
+  color: var(--color-primary);
+}
+
+.doctor-selection-card__image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.doctor-selection-card__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.doctor-selection-card__info h3 {
+  margin: 0 0 5px;
+
+  color: var(--color-text);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.doctor-selection-card__info span {
+  color: var(--color-primary);
+  font-size: 13px;
+}
+
+.doctor-selection-card__info small {
+  margin-top: 4px;
+
+  overflow: hidden;
+
+  color: var(--color-text-light);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.doctor-selection-card__radio {
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+}
+
+.doctor-selection-card--selected .doctor-selection-card__radio {
+  border: 5px solid var(--color-primary);
+}
+
+.doctor-step__message {
+  padding: 30px 0;
+
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+.doctor-step__message--error {
+  color: var(--color-danger);
+}
+
+.doctor-step__actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.doctor-step__back,
+.doctor-step__next {
+  min-width: 110px;
+  padding: 11px 22px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.doctor-step__back {
+  border: 1px solid var(--color-border);
+
+  background: var(--color-white);
+  color: var(--color-text);
+}
+
+.doctor-step__next {
+  border: none;
+
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.doctor-step__next:hover:not(:disabled) {
+  background: #2f65ad;
+}
+
+.doctor-step__next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 700px) {
+  .doctor-step__header h1 {
+    font-size: 26px;
+  }
+
+  .doctor-step__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctor-selection-card {
+    min-height: 90px;
+  }
+
+  .doctor-selection-card__image {
+    width: 54px;
+    height: 54px;
+  }
+}

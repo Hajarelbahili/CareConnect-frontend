@@ -1,0 +1,487 @@
+/* =========================================================
+   AUTH LAYOUT - CARECONNECT
+========================================================= */
+
+.auth-page {
+  position: relative;
+
+  min-height: 100vh;
+  width: 100%;
+
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    var(--color-white) 0%,
+    #f4f7fc 48%,
+    var(--color-background) 100%
+  );
+
+  color: var(--color-text);
+
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================================================
+   BACKGROUND DECORATIONS
+========================================================= */
+
+.auth-background-shape {
+  position: absolute;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+}
+
+.auth-shape-one {
+  width: 650px;
+  height: 650px;
+
+  top: -350px;
+  right: -100px;
+
+  background: rgba(161, 190, 229, 0.18);
+}
+
+.auth-shape-two {
+  width: 550px;
+  height: 550px;
+
+  bottom: -330px;
+  left: 180px;
+
+  background: rgba(111, 207, 214, 0.08);
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.auth-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(var(--container-width), calc(100% - 48px));
+
+  min-height: 100vh;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.08fr)
+    minmax(460px, 0.92fr);
+
+  align-items: center;
+
+  gap: 70px;
+
+  padding: 40px 30px;
+}
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.auth-intro {
+  position: relative;
+
+  min-height: 700px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 40px 0;
+}
+
+.auth-intro-content {
+  position: relative;
+
+  z-index: 3;
+
+  max-width: 600px;
+}
+
+/* =========================================================
+   WELCOME BADGE
+========================================================= */
+
+.auth-welcome-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 9px 18px;
+
+  border-radius: 30px;
+
+  background: rgba(161, 190, 229, 0.28);
+
+  color: var(--color-primary);
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  margin-bottom: 22px;
+}
+
+/* =========================================================
+   INTRO TITLE
+========================================================= */
+
+.auth-intro-content h1 {
+  margin: 0;
+
+  max-width: 600px;
+
+  color: var(--color-text);
+
+  font-size: 45px;
+
+  line-height: 1.04;
+
+  letter-spacing: -2.5px;
+
+  font-weight: 750;
+}
+
+.auth-intro-content h1 span {
+  display: block;
+
+  color: var(--color-primary);
+}
+
+/* =========================================================
+   INTRO DESCRIPTION
+========================================================= */
+
+.auth-intro-description {
+  max-width: 540px;
+
+  margin: 20px 0 34px;
+
+  color: var(--color-text-light);
+
+  font-size: 16px;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.auth-features {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.auth-feature {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.auth-feature-icon {
+  flex-shrink: 0;
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(145deg, #edf4fc, #dceafa);
+
+  color: var(--color-primary);
+
+  border: 1px solid rgba(161, 190, 229, 0.35);
+}
+
+.auth-feature h3 {
+  margin: 0 0 5px;
+
+  color: var(--color-text);
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+.auth-feature p {
+  margin: 0;
+
+  color: var(--color-text-light);
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   DOCTORS VISUAL
+========================================================= */
+
+.auth-doctors-visual {
+  position: absolute;
+
+  right: -30px;
+  bottom: 75px;
+
+  width: 500px;
+  height: 430px;
+
+  pointer-events: none;
+}
+
+.auth-doctor-circle {
+  position: absolute;
+
+  left: 55px;
+  bottom: 0;
+
+  width: 430px;
+  height: 390px;
+
+  border-radius: 48% 52% 42% 58% / 55% 42% 58% 45%;
+
+  background: linear-gradient(145deg, #e8f1fc, #d2e2f6);
+}
+
+/* =========================================================
+   DOCTORS IMAGE
+========================================================= */
+
+.auth-doctors-image {
+  position: absolute;
+
+  left: 160px;
+  bottom: -5px;
+
+  width: 250px;
+
+  height: auto;
+
+  max-width: none;
+
+  object-fit: contain;
+
+  z-index: 2;
+}
+
+/* =========================================================
+   FLOATING HEART
+========================================================= */
+
+.auth-heart-floating {
+  position: absolute;
+
+  top: 0;
+  right: 15px;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  color: var(--color-accent);
+
+  border: 1px solid rgba(161, 190, 229, 0.35);
+
+  box-shadow: 0 15px 35px rgba(58, 118, 200, 0.12);
+
+  backdrop-filter: blur(8px);
+}
+
+/* =========================================================
+   SLOGAN
+========================================================= */
+
+.auth-slogan {
+  position: absolute;
+
+  left: 0;
+  bottom: 15px;
+
+  color: var(--color-primary);
+
+  font-size: 27px;
+
+  line-height: 1.25;
+
+  font-weight: 600;
+
+  font-style: italic;
+
+  font-family: "Segoe Script", "Brush Script MT", cursive;
+
+  transform: rotate(-4deg);
+}
+
+/* =========================================================
+   RIGHT CARD
+========================================================= */
+
+.auth-card {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 485px;
+
+  justify-self: end;
+
+  padding: 48px 52px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(219, 227, 240, 0.8);
+
+  box-shadow: 0 25px 70px rgba(30, 41, 59, 0.1);
+
+  backdrop-filter: blur(10px);
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .auth-container {
+    grid-template-columns: 1fr;
+
+    max-width: 650px;
+
+    padding: 40px 0;
+  }
+
+  .auth-intro {
+    min-height: auto;
+
+    padding: 30px 0 0;
+  }
+
+  .auth-intro-content {
+    max-width: 100%;
+  }
+
+  .auth-doctors-visual {
+    display: none;
+  }
+
+  .auth-slogan {
+    display: none;
+  }
+
+  .auth-card {
+    justify-self: center;
+
+    max-width: 570px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+  .auth-page {
+    overflow-y: auto;
+  }
+
+  .auth-container {
+    width: 100%;
+
+    max-width: none;
+
+    padding: 25px var(--container-padding) 40px;
+
+    gap: 30px;
+  }
+
+  .auth-intro {
+    padding: 15px 0 0;
+  }
+
+  .auth-welcome-badge {
+    font-size: 14px;
+
+    padding: 8px 15px;
+  }
+
+  .auth-intro-content h1 {
+    font-size: 42px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .auth-intro-description {
+    font-size: 16px;
+
+    margin-top: 17px;
+  }
+
+  .auth-features {
+    gap: 15px;
+  }
+
+  .auth-feature-icon {
+    width: 53px;
+    height: 53px;
+  }
+
+  .auth-feature h3 {
+    font-size: 15px;
+  }
+
+  .auth-feature p {
+    font-size: 13px;
+  }
+
+  .auth-card {
+    padding: 30px 23px;
+
+    border-radius: 17px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .auth-intro-content h1 {
+    font-size: 36px;
+  }
+
+  .auth-card {
+    padding: 27px 18px;
+  }
+}
